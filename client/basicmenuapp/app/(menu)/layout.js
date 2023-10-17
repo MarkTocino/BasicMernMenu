@@ -1,5 +1,8 @@
+'use client'
 import { Montserrat } from 'next/font/google'
 import '../globals.css'
+import { NextUIProvider } from '@nextui-org/react'
+import Navigation from './navigation' 
 
 const montserrat = Montserrat({ 
   weight: '500',
@@ -7,11 +10,15 @@ const montserrat = Montserrat({
 
 
 export default function MenuLayout({ children }) {
+
   return (
-    <html lang="en">
+    <html lang="en"> 
       <body className={montserrat.className}>
-        {children}
-      </body>
+        <NextUIProvider>
+        <Navigation className='w-screen h-screen'/>
+          {children}
+        </NextUIProvider>
+      </body> 
     </html>
   )
 }
