@@ -26,10 +26,8 @@ export default function CreatePasta() {
         setFood_Description('')
         setImage('')
         setPrice('')
-
         router.refresh()
     }
-
     return (
     <div className='w-full flex justify-center p-2'>
         <form className='rounded-2xl border-black border-2 xl:w-2/5 lg:w-2/5 md:w-2/5 justify-center items-center p-2' onSubmit={createFood}>
