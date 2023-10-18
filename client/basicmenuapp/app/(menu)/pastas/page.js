@@ -1,7 +1,7 @@
 import React from 'react'
 import Pocketbase from 'pocketbase'
 import Link from 'next/link'
-
+import CreatePasta from './create'
 export const dynamic = 'auto',
 dynamicParams = true,
 revalidate = 0,
@@ -11,20 +11,19 @@ prefferedRegion = 'auto'
 async function getPastas () {
   const pb = new Pocketbase('http://127.0.0.1:8090')
   const resultPastas = await pb.collection('pastas').getFullList()
-  console.log(resultPastas)
   return resultPastas
   
 }
 
 export default async function Pastas() {
   const pastas = await getPastas();
-  console.log(pastas)
   return (
     <div>
     <h1 className='text-center lg:text-9xl md:text-6xl sm:text-5xl'>PASTA'S</h1>
     <div className='flex flex-row flex-wrap justify-center'>{pastas?.map((pasta) => {
       return <ListPastas key={pasta.id} pasta={pasta}/>
   })}</div>
+  <CreatePasta />
   </div>
   )
 }
