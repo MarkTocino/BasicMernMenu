@@ -21,7 +21,7 @@ return <Navbar onMenuOpenChange={setIsMenuOpen}>
     <NavbarContent className="hidden sm:flex gap-4" justify="center">
       <NavbarItem>
         <Link href="/pizza">
-          PIZZA'S
+          PIZZAS
         </Link>
       </NavbarItem>
       <NavbarItem>

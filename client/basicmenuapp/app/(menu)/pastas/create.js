@@ -9,7 +9,8 @@ export default function CreatePasta() {
     const [food_image, setImage] = useState('')
     const [price, setPrice] = useState('')
     const router = useRouter()
-    const createFood = async() => {
+    const createFood = async(e) => {
+        e.preventDefault()
         await fetch('http://127.0.0.1:8090/api/collections/pastas/records',{
             method: 'POST',
             headers: {
@@ -26,6 +27,7 @@ export default function CreatePasta() {
         setFood_Description('')
         setImage('')
         setPrice('')
+
         router.refresh()
     }
     return (

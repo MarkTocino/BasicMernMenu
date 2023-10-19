@@ -27,11 +27,11 @@ export default async function AppetizersPage() {
 }
 
 function ListAppetizers({ appetizer }) {
-  const { id, food_name, food_description, food_image, price} = appetizer || {}
+  const { id, food_name, food_image, price} = appetizer || {}
   return (
     <div className='text-center p-5'>
       <Link href={`/appetizers/${id}`}>
-        <img className='h-72 w-96 lg:h-64 md:h-64 sm:h-64' src={`${food_image}`} alt={`${food_name}`} />
+        <img className='h-72 w-96 lg:h-64 md:h-64 sm:h-64 transition ease-in-out delay-75 hover:-translate-y-3 rounded-3xl' src={`${food_image}`} alt={`${food_name}`} />
         <h1>{food_name}</h1>
         <h1>Price:${price}</h1>
       </Link>

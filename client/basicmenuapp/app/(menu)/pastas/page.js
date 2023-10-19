@@ -19,7 +19,7 @@ export default async function Pastas() {
   const pastas = await getPastas();
   return (
     <div>
-    <h1 className='text-center lg:text-9xl md:text-6xl sm:text-5xl'>PASTA'S</h1>
+    <h1 className='text-center lg:text-9xl md:text-6xl sm:text-5xl'>PASTAS</h1>
     <div className='flex flex-row flex-wrap justify-center'>{pastas?.map((pasta) => {
       return <ListPastas key={pasta.id} pasta={pasta}/>
   })}</div>
@@ -33,7 +33,7 @@ function ListPastas({ pasta }) {
   return (
     <div className='text-center p-5'>
       <Link href={`/pastas/${id}`}>
-        <img className='h-72 w-96 lg:h-64 md:h-64 sm:h-64' src={`${food_image}`} alt={`${food_name}`} />
+        <img className='h-72 w-96 lg:h-64 md:h-64 sm:h-64 transition ease-in-out delay-75 hover:-translate-y-3 rounded-3xl' src={`${food_image}`} alt={`${food_name}`} />
         <h1>{food_name}</h1>
         <h1>Price:${price}</h1>
       </Link>

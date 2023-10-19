@@ -13,7 +13,6 @@ export default async function AppetizerPage({params}) {
             <h1>{appetizer.food_name}</h1>
         <div className="text-center xl:w-1/2 lg:w-3/4 md:w-3/4">
             <h1>Description: {appetizer.food_description}</h1>
-            <br></br>
             <h1>Price: ${appetizer.price}</h1>
         </div>
         </div>
