@@ -11,7 +11,7 @@ export default function CreatePasta() {
     const router = useRouter()
     const createFood = async(e) => {
         e.preventDefault()
-        await fetch('http://127.0.0.1:8090/api/collections/pastas/records',{
+        await fetch('https://muddy-silence-8178.fly.dev/api/collections/pastas/records',{
             method: 'POST',
             headers: {
                 'Content-Type':'application/json',

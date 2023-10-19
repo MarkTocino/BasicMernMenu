@@ -13,14 +13,14 @@ runtime = 'nodejs',
 prefferedRegion = 'auto'
 
 async function getPizzas (page) {
-  const res = await fetch(`http://127.0.0.1:8090/api/collections/pizza/records?page=1&perPage=${page}`)
+  const res = await fetch(`https://muddy-silence-8178.fly.dev/api/collections/pizza/records?page=1&perPage=${page}`)
   const data = await res.json()
   // console.log(data?.items.length)
   return data?.items
 }
 
 async function getAllPizzas () {
-  const pb = new Pocketbase('http://127.0.0.1:8090')
+  const pb = new Pocketbase('https://muddy-silence-8178.fly.dev')
   const pizzas = await pb.collection('pizza').getFullList()
   return pizzas
 }
@@ -61,7 +61,7 @@ export default function Pizza() {
 }
 
 function ListPizzas({pizza}) {
-  const { id, food_name, food_description, food_image, price} = pizza || {}
+  const { id, food_name, food_image, price} = pizza || {}
   return (
     <div className='text-center p-5 '>
     <Link href={`/pizza/${id}`}>

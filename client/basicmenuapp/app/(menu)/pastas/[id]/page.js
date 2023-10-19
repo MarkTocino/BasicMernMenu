@@ -1,6 +1,6 @@
 import React from "react";
 async function getPasta(pastaId) {
-    const res = await fetch (`http://127.0.0.1:8090/api/collections/pastas/records/${pastaId}`)
+    const res = await fetch (`https://muddy-silence-8178.fly.dev/api/collections/pastas/records/${pastaId}`)
     const data = await res.json()
     return data
 }

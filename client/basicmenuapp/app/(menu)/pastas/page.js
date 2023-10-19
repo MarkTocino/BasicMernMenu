@@ -9,7 +9,7 @@ runtime = 'nodejs',
 prefferedRegion = 'auto'
 
 async function getPastas () {
-  const pb = new Pocketbase('http://127.0.0.1:8090')
+  const pb = new Pocketbase('https://muddy-silence-8178.fly.dev')
   const resultPastas = await pb.collection('pastas').getFullList()
   return resultPastas
   
